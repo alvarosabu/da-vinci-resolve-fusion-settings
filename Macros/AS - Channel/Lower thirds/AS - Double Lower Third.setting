@@ -1,0 +1,449 @@
+{
+	Tools = ordered() {
+		ASDoublelowerthid = MacroOperator {
+			Inputs = ordered() {
+				Input13 = InstanceInput {
+					SourceOp = "TopLabel",
+					Source = "StyledText",
+				},
+				Input14 = InstanceInput {
+					SourceOp = "TopLabel",
+					Source = "Font",
+					ControlGroup = 7,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "TopLabel",
+					Source = "Style",
+					ControlGroup = 7,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "TopLabel",
+					Source = "Size",
+					Default = 0.0472,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "TopBg",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 5,
+					Default = 0.2039215686275,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "TopBg",
+					Source = "TopLeftGreen",
+					ControlGroup = 5,
+					Default = 0.8274509803922,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "TopBg",
+					Source = "TopLeftBlue",
+					ControlGroup = 5,
+					Default = 0.6,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "TopBg",
+					Source = "TopLeftAlpha",
+					ControlGroup = 5,
+					Default = 1,
+				},
+				Input1 = InstanceInput {
+					SourceOp = "BottomLabel",
+					Source = "StyledText",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "BottomLabel",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "BottomLabel",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "BottomLabel",
+					Source = "Size",
+					Default = 0.0394,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "BottomBg",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 4,
+					Default = 0.1686274509804,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "BottomBg",
+					Source = "TopLeftGreen",
+					ControlGroup = 4,
+					Default = 0.2196078431373,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "BottomBg",
+					Source = "TopLeftBlue",
+					ControlGroup = 4,
+					Default = 0.2745098039216,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "BottomBg",
+					Source = "TopLeftAlpha",
+					ControlGroup = 4,
+					Default = 1,
+				},
+
+
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "MediaOut1",
+					Source = "Output",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "Path1",
+					Source = "Heading",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "Path1_1",
+					Source = "Heading",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				MediaOut1 = MediaOut {
+					CtrlWShown = false,
+					Inputs = {
+						Index = Input { Value = "0", },
+						Input = Input {
+							SourceOp = "Merge3",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1004.09, 318.841 } },
+				},
+				Merge3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 867.479, 352.067 } },
+				},
+				Merge1_1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "SlideInUpGrowInRight_1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "BottomLabel",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 682.054, 319.246 } },
+				},
+				BottomLabel = TextPlus {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalIn = Input { Value = 39, },
+						GlobalOut = Input { Value = 771, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.0356040953222244, 0.0775134878973456 }, },
+						StyledText = Input { Value = "Second line here", },
+						Font = Input { Value = "Gilroy", },
+						Style = Input { Value = "ExtraBold", },
+						Size = Input { Value = 0.0394, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Start = Input {
+							SourceOp = "BottomLabelStart",
+							Source = "Value",
+						},
+						End = Input {
+							SourceOp = "BottomLabelEnd",
+							Source = "Value",
+						},
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 681.51, 243.327 } },
+					UserControls = ordered() { NewControl = { INP_Integer = false, LINKID_DataType = "Number", LINKS_Name = "New Control", } }
+				},
+				BottomLabelStart = BezierSpline {
+					SplineColor = { Red = 232, Green = 6, Blue = 244 },
+					KeyFrames = {
+						[39] = { 0, RH = { 42.6666666666667, 0 }, Flags = { Linear = true } },
+						[50] = { 0, LH = { 46.3333333333333, 0 }, RH = { 56.3333333333333, 0 }, Flags = { Linear = true } },
+						[69] = { 0, LH = { 62.6666666666667, 0 }, RH = { 75, 0 }, Flags = { Linear = true } },
+						[87] = { 0, LH = { 81, 0 }, Flags = { Linear = true } }
+					}
+				},
+				BottomLabelEnd = BezierSpline {
+					SplineColor = { Red = 72, Green = 233, Blue = 54 },
+					KeyFrames = {
+						[43] = { 0.04, RH = { 50.4166666666667, 0.0441666666666667 }, Flags = { Linear = true } },
+						[53] = { 1, LH = { 44.25, 1.00416666666667 }, RH = { 62.3333333333335, 1 } },
+						[81] = { 1, LH = { 71.6666666666665, 1 }, RH = { 86.6636444444414, 1 } },
+						[89] = { 0, LH = { 82.6, 0 } }
+					}
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge1_1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 867.479, 243.822 } },
+				},
+				SlideInUpGrowInRight = Transform {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Center = Input {
+							SourceOp = "Path1",
+							Source = "Position",
+						},
+						Pivot = Input { Value = { 0, 0.5 }, },
+						UseSizeAndAspect = Input { Value = 0, },
+						Size = Input { Value = 0.14, },
+						XSize = Input {
+							SourceOp = "SlideInUpGrowInRightXSize",
+							Source = "Value",
+						},
+						YSize = Input { Value = 0.1073684210526, },
+						Input = Input {
+							SourceOp = "TopBg",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 543.096, 166.683 } },
+					UserControls = ordered() { NewControl = { INP_Integer = false, LINKID_DataType = "Number", LINKS_Name = "New Control", } }
+				},
+				Path1 = PolyPath {
+					DrawMode = "InsertAndModify",
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path1Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0.0147783251231527, Y = -0.5810702, RX = 7.03462074471325e-11, RY = 0.0836900666666667 },
+									{ Linear = true, LockY = true, X = 0.0147783253341913, Y = -0.33, LX = -7.03462074471325e-11, LY = -0.0836900666666667, RX = 0, RY = 0 },
+									{ Linear = true, LockY = true, X = 0.0147783253341913, Y = -0.33, LX = 0, LY = 0, RX = -7.51713506256616e-18, RY = -0.0829824542232424 },
+									{ Linear = true, LockY = true, X = 0.0147783253341913, Y = -0.578947362669727, LX = 7.51713506256616e-18, LY = 0.0829824542232424 }
+								}
+							},
+						},
+					},
+				},
+				Path1Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					KeyFrames = {
+						[0] = { 0, RH = { 18.3111111111102, -0.00976349816492379 }, Flags = { Linear = true, LockedY = true } },
+						[20] = { 0.50212276276751, LH = { 5.88888888888889, 0.504912333671775 }, RH = { 47.6666666666667, 0.50212276276751 }, Flags = { LockedY = true } },
+						[103] = { 0.50212276276751, LH = { 75.3333333333333, 0.50212276276751 }, RH = { 106.333333333333, 0.50212276276751 }, Flags = { LockedY = true } },
+						[113] = { 1, LH = { 101.05, 1.00400173448223 }, Flags = { LockedY = true } }
+					}
+				},
+				SlideInUpGrowInRightXSize = BezierSpline {
+					SplineColor = { Red = 251, Green = 94, Blue = 44 },
+					KeyFrames = {
+						[0] = { 0.01, RH = { 6.66666666666667, 0.00966666666666667 }, Flags = { Linear = true } },
+						[20] = { 0.009, LH = { 13.3333333333333, 0.00933333333333333 }, RH = { 46.4, -0.0045 }, Flags = { Linear = true } },
+						[50] = { 0.4, LH = { 25.1, 0.4075 }, RH = { 61.6666666666667, 0.4 } },
+						[85] = { 0.4, LH = { 73.3333333333333, 0.400000000000035 }, RH = { 89.25, 0.4 } },
+						[96] = { 0.01, LH = { 85.8005225632614, 0.00600020492676918 } }
+					}
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "SlideInUpGrowInRight",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TopLabel",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 682.363, 166.683 } },
+				},
+				SlideInUpGrowInRight_1 = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					EnabledRegion = TimeRegion { { Start = 0, End = 119.9999, FrameLength = 1 } },
+					Inputs = {
+						Center = Input {
+							SourceOp = "Path1_1",
+							Source = "Position",
+						},
+						Pivot = Input { Value = { 0, 0.5 }, },
+						UseSizeAndAspect = Input { Value = 0, },
+						Size = Input { Value = 0.14, },
+						XSize = Input {
+							SourceOp = "SlideInUpGrowInRight_1XSize",
+							Source = "Value",
+						},
+						YSize = Input { Value = 0.08, },
+						Input = Input {
+							SourceOp = "BottomBg",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 542.787, 319.246 } },
+					UserControls = ordered() { NewControl = { INP_Integer = false, LINKID_DataType = "Number", LINKS_Name = "New Control", } }
+				},
+				Path1_1 = PolyPath {
+					DrawMode = "InsertAndModify",
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path1_1Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0.0147783251231527, Y = -0.5810702, RX = 7.03462074471325e-11, RY = 0.0523334 },
+									{ Linear = true, LockY = true, X = 0.0147783253341913, Y = -0.42407, LX = -7.03462074471325e-11, LY = -0.0523334, RX = 0, RY = 0 },
+									{ Linear = true, LockY = true, X = 0.0147783253341913, Y = -0.42407, LX = 0, LY = 0, RX = -7.51713506256616e-18, RY = -0.0516257875565757 },
+									{ Linear = true, LockY = true, X = 0.0147783253341913, Y = -0.578947362669727, LX = 7.51713506256616e-18, LY = 0.0516257875565757 }
+								}
+							},
+						},
+					},
+				},
+				Path1_1Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					KeyFrames = {
+						[9] = { 0, RH = { 27.3111111111102, -0.0097883978588723 }, Flags = { Linear = true, LockedY = true } },
+						[29] = { 0.50340331845629, LH = { 14.8888888888889, 0.506200003558826 }, RH = { 53, 0.50340331845629 }, Flags = { LockedY = true } },
+						[101] = { 0.50340331845629, LH = { 77, 0.50340331845629 }, RH = { 104.666666666667, 0.50340331845629 }, Flags = { LockedY = true } },
+						[112] = { 1, LH = { 98.855, 1.0043905860868 }, Flags = { LockedY = true } }
+					}
+				},
+				SlideInUpGrowInRight_1XSize = BezierSpline {
+					SplineColor = { Red = 251, Green = 94, Blue = 44 },
+					KeyFrames = {
+						[9] = { 0.01, RH = { 15.6666666666667, 0.00833333333333333 }, Flags = { Linear = true } },
+						[29] = { 0.005, LH = { 22.3333333333333, 0.00666666666666667 }, RH = { 47.475649615442, -0.00444777537153285 }, Flags = { Linear = true } },
+						[50] = { 0.3, LH = { 32.5724178330519, 0.305249271737033 }, RH = { 60.89, 0.3 } },
+						[83] = { 0.3, LH = { 72.11, 0.300000000000033 }, RH = { 86.4772727272727, 0.3 } },
+						[92] = { 0.005, LH = { 83.6590347480184, 0.00172903323451704 } }
+					}
+				},
+				BottomBg = Background {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.1686274509804, },
+						TopLeftGreen = Input { Value = 0.2196078431373, },
+						TopLeftBlue = Input { Value = 0.2745098039216, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 410.107, 319.067 } },
+				},
+				TopBg = Background {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.2039215686275, },
+						TopLeftGreen = Input { Value = 0.8274509803922, },
+						TopLeftBlue = Input { Value = 0.6, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 410.416, 166.504 } },
+				},
+				TopLabel = TextPlus {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						GlobalIn = Input { Value = 39, },
+						GlobalOut = Input { Value = 771, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.0361249286555577, 0.175661636045494 }, },
+						StyledText = Input { Value = "Introduce your label here", },
+						Font = Input { Value = "Gilroy", },
+						Style = Input { Value = "ExtraBold", },
+						Size = Input { Value = 0.0472, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Start = Input {
+							SourceOp = "TopLabelStart",
+							Source = "Value",
+						},
+						End = Input {
+							SourceOp = "TopLabelEnd",
+							Source = "Value",
+						},
+						ManualFontKerningPlacement = Input {
+							Value = StyledText {
+								Array = {
+								},
+								Value = ""
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 681.819, 90.7629 } },
+					UserControls = ordered() { NewControl = { INP_Integer = false, LINKID_DataType = "Number", LINKS_Name = "New Control", } }
+				},
+				TopLabelStart = BezierSpline {
+					SplineColor = { Red = 232, Green = 6, Blue = 244 },
+					KeyFrames = {
+						[39] = { 0, RH = { 44.6666666666667, 0 }, Flags = { Linear = true } },
+						[56] = { 0, LH = { 50.3333333333333, 0 }, RH = { 59.3333333333333, 0 }, Flags = { Linear = true } },
+						[66] = { 0, LH = { 62.6666666666667, 0 }, RH = { 69, 0 }, Flags = { Linear = true } },
+						[75] = { 0, LH = { 72, 0 }, Flags = { Linear = true } }
+					}
+				},
+				TopLabelEnd = BezierSpline {
+					SplineColor = { Red = 72, Green = 233, Blue = 54 },
+					KeyFrames = {
+						[39] = { 0.04, RH = { 51.6083333333334, 0.0470833333333334 }, Flags = { Linear = true } },
+						[56] = { 1, LH = { 41.125, 1.00708333333334 }, RH = { 65, 1 } },
+						[83] = { 1, LH = { 74, 1 }, RH = { 89.3715999999966, 1 } },
+						[92] = { 0, LH = { 84.8, 0 } }
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "ASDoublelowerthid"
+}

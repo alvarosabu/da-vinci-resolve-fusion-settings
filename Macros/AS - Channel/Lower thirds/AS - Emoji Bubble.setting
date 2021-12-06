@@ -1,0 +1,273 @@
+{
+	Tools = ordered() {
+		ASEmojiBubble = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Transform2",
+					Source = "Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Transform2",
+					Source = "Size",
+					Default = 0.17,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Transform2",
+					Source = "Aspect",
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Transform2",
+					Source = "XSize",
+					Default = 0.17,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Transform2",
+					Source = "YSize",
+					Default = 0.17,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Transform2",
+					Source = "Width",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Transform2",
+					Source = "Height",
+					Default = 1,
+				},
+				MainInput1 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Input",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Center",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Size",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Aspect",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "XSize",
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "YSize",
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Width",
+					Default = 1,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Height",
+					Default = 1,
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "Path1",
+					Source = "Heading",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "Dissolve1Blend",
+					Source = "Value",
+				},
+				MainOutput1 = InstanceOutput {
+					SourceOp = "MediaOut1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Transform2 = Transform {
+					Inputs = {
+						Center = Input {
+							SourceOp = "Path1",
+							Source = "Position",
+						},
+						Size = Input { Value = 0.17, },
+						XSize = Input { Value = 0.17, },
+						YSize = Input { Value = 0.17, },
+						Input = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1265.88, 239.131 } },
+				},
+				Path1 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path1Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0.425196850393701, Y = -0.166 }
+								}
+							},
+						},
+					},
+				},
+				Path1Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					NameSet = true,
+					KeyFrames = {
+						[24] = { 0, Flags = { Linear = true, LockedY = true } }
+					}
+				},
+				Background1 = Background {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.9490196078431, },
+						TopLeftGreen = Input { Value = 0.9490196078431, },
+						TopLeftBlue = Input { Value = 0.9490196078431, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 857.013, 202.275 } },
+				},
+				Dissolve1 = Dissolve {
+					Transitions = {
+						[0] = "DFTDissolve"
+					},
+					Inputs = {
+						Blend = Input {
+							SourceOp = "Dissolve1Blend",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform2",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1521.69, 194.561 } },
+				},
+				Dissolve1Blend = BezierSpline {
+					SplineColor = { Red = 205, Green = 205, Blue = 205 },
+					KeyFrames = {
+						[0] = { 0, RH = { 23, 0.004 }, Flags = { Linear = true } },
+						[24] = { 1, LH = { 2.6, 1.004 }, RH = { 39.3333333333333, 1 } },
+						[70] = { 1, LH = { 54.6668738802952, 1.00282638269487 }, RH = { 91.7, 0.995999999999999 } },
+						[94] = { 0, LH = { 67.9029999999977, 0 } }
+					}
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1083.29, 170.563 } },
+				},
+				Background2 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1347.27, 155.992 } },
+				},
+				Rectangle1 = RectangleMask {
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 0.362, },
+						CornerRadius = Input { Value = 0.118, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 513.831, 153.417 } },
+				},
+				Polygon1 = PolylineMask {
+					DrawMode = "InsertAndModify",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle1",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							SourceOp = "Polygon1Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 674.108, 155.562 } },
+				},
+				Polygon1Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					KeyFrames = {
+						[10868] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Closed = true,
+								Points = {
+									{ Linear = true, X = -0.0725534334778786, Y = -0.25, LX = 0.0483832249537482, LY = 0.00068436557252749, RX = 0.0245616576895236, RY = -0.0436651692258198 },
+									{ Linear = true, X = 0.00113153958227485, Y = -0.380995512008667, LX = -0.0245616576895236, LY = 0.0436651692258198, RX = 0.0238215672670304, RY = 0.0443495362420832 },
+									{ Linear = true, X = 0.072596241383366, Y = -0.247946903282418, LX = -0.0238215672670304, LY = -0.0443495362420832, RX = -0.0483832249537482, RY = -0.00068436557252749 }
+								}
+							} }
+					}
+				},
+				MediaOut1 = MediaOut {
+					Inputs = {
+						Index = Input { Value = "0", },
+						Input = Input {
+							SourceOp = "Dissolve1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 1741.08, 141.21 } },
+				},
+				Transform1 = Transform {
+					CtrlWZoom = false,
+					ViewInfo = OperatorInfo { Pos = { 987.755, 114.851 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "ASEmojiBubble"
+}
